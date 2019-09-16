@@ -14,7 +14,7 @@ set(SOURCES
     )
 
 add_executable(sampleserver ${SOURCES})
-target_link_libraries(sampleserver PUBLIC pthread libboost_program_options.a libboost_filesystem.a libboost_system.a crypto ssl)
+target_link_libraries(sampleserver PUBLIC boost_system.a pthread crypto ssl)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 install(
