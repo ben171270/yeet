@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
-	<head> 
-		<meta charset="UTF-8"> 
-		<title>Gears of War 5 </title> 
-		<style> #kopfbereich { background:url(saeulen.jpg);
-		height:150px ;
-		width: 250px ; }
-		html, body{font: 100% Arial, Helvetica, sans-serif;}
-		</style> 
-	</head> 
-	<body> 
-		<div id="kopfbereich"> 
-			<p>Info zu Gears of War 5</p>
-		 </div> 
-		
-		<div id="Gears"><p> Gears </p></div>
-	</body>
-	</html>
+<head>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="styles.css"> 
+	<title>Simplechat</title> 
+</head> 
+<body>
+	<article>
+		<section id="title">
+			<h1>SimpleChat</h1>
+		</section>
+		<section id="output">
+			<div class="message">
+				<span class="user">Hans:</span>
+				<span class="text">hello </span>
+			</div>
+			<div class="message">
+				<span class="user">ben:</span>
+				<span class="text">hello </span>
+			</div>
+			<div class="message">
+				<span class="user">Hans:</span>
+				<span class="text">Hru </span>
+			</div>
+		</section>
+		<section id="input">
+			<form>
+				<div class="user">Hans</div>
+				<input type="text" value="" placeholder="message">
+				<button type="submit">send</button>
+			</form>
+		</section>
+	</article>
+</body>
