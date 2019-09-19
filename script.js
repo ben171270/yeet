@@ -1,10 +1,10 @@
 const output = document.getElementById("output");
-const form = document.querySelector("#input form");
+const form = document.querySelector("#msgInput form");
 
-const user = prompt("Please enter your name") ;
+const user = "" ;
 form.querySelector(".user").textContent = user;
 
-const color = prompt("Please enter your color", "FFFFFF");
+const color = "";
 
 function addMessage(data, output) {
     const message = document.createElement("div");
