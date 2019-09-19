@@ -36,6 +36,9 @@ article#chat {
 
 article#login {
     background: rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 article#login section {
     background: var(--color-background);
