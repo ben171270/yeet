@@ -1,6 +1,7 @@
 const output = document.getElementById("output");
 const form = document.querySelector("#msgInput form");
 
+
 const user = "" ;
 form.querySelector(".user").textContent = user;
 
@@ -35,3 +36,14 @@ function onSubmit(event, output, name, color) {
 }
 
 form.addEventListener("submit", (event) => onSubmit(event, output, user, color));
+ 
+const loginForm = document.querySelector("#login form");
+
+loginForm.addEventListener("submit", function() {
+    alert("hello world");
+});
+   
+
+
+
+
