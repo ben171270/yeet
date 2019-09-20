@@ -1,11 +1,8 @@
 const output = document.getElementById("output");
 const form = document.querySelector("#msgInput form");
 
-
-const user = "" ;
-form.querySelector(".user").textContent = user;
-
-const color = "";
+let user = "" ;
+let color = "";
 
 function addMessage(data, output) {
     const message = document.createElement("div");
@@ -39,8 +36,15 @@ form.addEventListener("submit", (event) => onSubmit(event, output, user, color))
  
 const loginForm = document.querySelector("#login form");
 
-loginForm.addEventListener("submit", function() {
-    alert("hello world");
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    user = form.querySelectorAll("input")[0].value 
+    color = form.querySelectorAll("input")[1].value
+
+    document.querySelector("#msgInput .user").textContent = user;
+    document.querySelector("#login").style.display = "none";
 });
    
 
