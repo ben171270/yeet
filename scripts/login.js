@@ -1,3 +1,4 @@
+// do not use this imports, they are for IntelliSense
 import { State } from "./state.js";
 
 export class Login {
@@ -11,6 +12,7 @@ export class Login {
         this._state = state;
 
         this._login.querySelector("form").addEventListener("submit", this._onLogin.bind(this));
+        this._login.querySelector("input").addEventListener("keypress",(event)=> {console.log(event)});
     }
 
     _onLogin(event) {
