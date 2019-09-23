@@ -1,6 +1,7 @@
 export class State {
     _name = "";
     _color = "";
+    _showLogin = true;
     _listener = [];
 
     /**
@@ -16,6 +17,21 @@ export class State {
      */
     get name() {
         return this._name;
+    }
+
+    /**
+     * @param {boolean}
+     */
+    set showLogin(show) {
+        this._showLogin = show;
+        this._trigger();
+    }
+
+    /**
+     * @returns {boolean}
+     */
+    get showLogin() {
+        return this._showLogin;
     }
 
     /**

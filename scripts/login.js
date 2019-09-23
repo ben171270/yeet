@@ -12,17 +12,24 @@ export class Login {
         this._state = state;
 
         this._login.querySelector("form").addEventListener("submit", this._onLogin.bind(this));
-        this._login.querySelector("input").addEventListener("keypress",(event)=> {console.log(event)});
+
+        state.listen(this._onStateChange.bind(this));
     }
 
     _onLogin(event) {
         event.preventDefault();
     
         const form = event.target;
-        this._state.name = form.querySelectorAll("input")[0].value;
-        this._state.color = form.querySelectorAll("input")[1].value;
-    
-        this._login.style.display = "none";
+        this._state.name = form.querySelector("input").value;
+        this._state.showLogin = false;
+    }
+
+    _onStateChange() {
+        if (this._state.showLogin) {
+            this._login.style.display = "grid";
+        } else {
+            this._login.style.display = "none";
+        }
     }
 
 }

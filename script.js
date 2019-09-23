@@ -7,6 +7,7 @@ import {Colors} from "./scripts/colors.js";
 const state = new State();
 
 const output = new Output(document.getElementById("output"));
+
 new Login(document.getElementById("login"), state);
 new MessageInput(document.getElementById("msgInput"), state, output);
-new Colors(document.getElementById("colors")); 
+new Colors(document.getElementById("colors"), state);

@@ -44,7 +44,7 @@ article#login section {
     background: var(--color-background);
     padding:  var(--smallspace);
 }
-article#login div {
+article#login form > div {
      margin: var(--smallspace);
 }
 article#login label  {
@@ -88,10 +88,11 @@ article#login label  {
     color: var(--color-background);
 }
 
-#msgInput div {
+#msgInput .user {
     grid-area: user;
     padding: .5rem;
     border: none;
+    cursor: pointer;
 }
 
 input {
@@ -108,7 +109,7 @@ input {
 }
 
 article#login button {
-    margin: var(--smallspace);
+    margin-top: var(--smallspace);
 }
 
 button {
@@ -147,3 +148,19 @@ button:hover {
     margin-bottom: .5rem;
 }
 
+#colors {
+    display: flex;
+    margin: 0 -2px;
+}
+
+#colors > span {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid var(--color-background);
+    cursor: pointer;
+}
+
+#colors .active {
+    border-color : #ffffff;
+}
