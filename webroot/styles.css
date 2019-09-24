@@ -1,0 +1,166 @@
+:root {
+    --color-foreground: #d0d0d0;
+    --color-foreground-highlight: #bbb;
+    --color-background: #191919;
+    --color-background-highlight: #333;
+    --space:1rem;
+    --smallspace:.5rem;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #242424;
+    color: var(--color-foreground); 
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; 
+    line-height: 1.4;
+}
+
+
+article {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;    
+}
+
+article#chat {
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+article#login {
+    background: rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+article#login section {
+    background: var(--color-background);
+    padding:  var(--smallspace);
+}
+article#login form > div {
+     margin: var(--smallspace);
+}
+article#login label  {
+    display: block;
+}
+
+#title {
+    background: var(--color-background);
+    padding: var(--space); 
+}
+
+#title h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+#output {
+    padding: var(--space);
+
+}
+
+#msgInput {
+    background: var(--color-background);
+    padding: var(--space);
+}
+
+#msgInput form {
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: 1fr auto auto auto 1fr;
+    grid-template-areas: ". user input button .";
+}
+
+#msgInput input,
+#msgInput button {
+    background: var(--color-foreground);
+    color: var(--color-background);
+}
+
+#msgInput .user {
+    grid-area: user;
+    padding: .5rem;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    padding: .5rem;
+    border: none;
+    background: var(--color-foreground);
+    color: var(--color-background);
+}
+
+#msgInput input {
+    grid-area: input;
+    width: 50vw;
+    max-width: 750px;
+}
+
+article#login button {
+    margin-top: var(--smallspace);
+}
+
+button {
+    border: none;
+    padding: .5rem 2rem;
+    background: var(--color-foreground);
+    color: var(--color-background);
+    cursor: pointer;
+
+}
+
+button:hover {
+    background: var(--color-foreground-highlight);
+}
+
+#msgInput button{
+    grid-area: button;
+}
+
+@media (max-width:800px) {
+    #msgInput form {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 
+            "input input"
+            "user button";
+    }
+
+    #msgInput input {
+        grid-area: input;
+        width: 100%;
+    }    
+}
+
+.message {
+    margin-bottom: .5rem;
+}
+
+#colors {
+    display: flex;
+    margin: 0 -2px;
+}
+
+#colors > span {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid var(--color-background);
+    cursor: pointer;
+}
+
+#colors .active {
+    border-color : #ffffff;
+}
