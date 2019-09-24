@@ -29,12 +29,15 @@ export class MessageInput {
         const message = input.value;
         input.value = "";
     
-        this._output.add({
-            name: this._state.name,
-            color: this._state.color,
-            message
-        });
-    }
+        fetch("/message",
+            {method : "POST",
+            body : JSON.stringify( {
+                name : this._state.name , 
+                color : this._state.color,
+                message            
+            })
+        }).catch((error) => console.log(error));
+   }
 
     _onStateChange() {
         const user = this._form.querySelector(".user");

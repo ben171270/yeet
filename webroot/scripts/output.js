@@ -1,9 +1,31 @@
 export class Output {
+    _lastId = 0;
+
     /**
      * @param {HTMLElement} output 
      */
     constructor(output) {
         this._output = output;
+
+        setInterval(() => {     
+            fetch("/messages/" + this._lastId)
+                .then(async (response) => {
+                    if(!response.ok){
+                        throw response.statusText;
+                    } 
+                    const messages = await response.json();
+                    for (const message of messages) {
+                        this.add(message);
+                        if (this._lastId < message.id) {
+                            this._lastId = message.id;
+                        }
+
+                    }
+                }) 
+                .catch((error) => {
+                    console.error("on fetch " ,  error);
+                });
+        }, 1000);
     }
 
     /**

@@ -67,7 +67,7 @@ article#login label  {
 
 #output {
     padding: var(--space);
-
+    overflow: auto;
 }
 
 #msgInput {
