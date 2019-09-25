@@ -49,7 +49,13 @@ export class Output {
         message.appendChild(user);
         message.appendChild(text);
 
+        const isEnd = this._output.offsetHeight + this._output.scrollTop === this._output.scrollHeight;
+    
         this._output.appendChild(message);
+
+        if (isEnd) {
+            message.scrollIntoView();
+        }        
     }
 
 }
