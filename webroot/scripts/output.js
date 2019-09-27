@@ -1,5 +1,6 @@
 export class Output {
     _lastId = 0;
+    _autoScroll = true;
 
     /**
      * @param {HTMLElement} output 
@@ -26,6 +27,10 @@ export class Output {
                     console.error("on fetch " ,  error);
                 });
         }, 1000);
+
+        this._output.addEventListener("scroll", () => {
+            this._autoScroll = (this._output.offsetHeight + this._output.scrollTop) >= this._output.scrollHeight;
+        });
     }
 
     /**
@@ -48,13 +53,11 @@ export class Output {
         
         message.appendChild(user);
         message.appendChild(text);
-
-        const isEnd = this._output.offsetHeight + this._output.scrollTop === this._output.scrollHeight;
     
         this._output.appendChild(message);
 
-        if (isEnd) {
-            message.scrollIntoView();
+        if (this._autoScroll) {
+            this._output.scrollTo({top: this._output.scrollHeight});
         }        
     }
 
